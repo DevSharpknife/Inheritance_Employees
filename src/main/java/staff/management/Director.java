@@ -14,6 +14,10 @@ public class Director extends Manager {
     public Double getBudget() {
         return budget;
     }
+
+    public double getBonus() {
+        return getSalary() * 0.02;
+    }
 }
 
 // Add a private property to store a double value budget.

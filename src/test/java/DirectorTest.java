@@ -1,7 +1,6 @@
 import staff.management.Director;
 import org.junit.Before;
 import org.junit.Test;
-import staff.management.Director;
 
 import static org.junit.Assert.assertEquals;
 
@@ -29,6 +28,18 @@ public class DirectorTest {
     }
 
     @Test
+    public void canChangeName() {
+        director.setName("Frodo");
+        assertEquals("Frodo", director.getName());
+    }
+
+    @Test
+    public void cannotChangeNameToNullValue() {
+        director.setName(null);
+        assertEquals("Wanda", director.getName());
+    }
+
+    @Test
     public void canRaiseSalary() {
         director.raiseSalary(0.03);
         assertEquals(51500.00, director.getSalary(), 0.01);
@@ -36,7 +47,7 @@ public class DirectorTest {
 
     @Test
     public void canPayBonus() {
-        assertEquals(500.00, director.getBonus(), 0.01);
+        assertEquals(1000.00, director.getBonus(), 0.01);
     }
 
     @Test
